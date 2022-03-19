@@ -69,10 +69,13 @@ function App() {
                 setGoToTop(false)
             }
         }
-
         window.addEventListener('scroll', handleScroll)
 
     }, [])
+
+    useEffect(() => {
+
+    },[])
 
     return (
         <div className="App">
@@ -82,9 +85,12 @@ function App() {
                 search={search}
                 setSearch={setSearch}
             />
+
+            {loading && <Loading/>}
+
             {seiyuuList.length == 0
                 ? <Blank />
-                : (loading ? <Loading /> : <List seiyuuList={seiyuuList} loading={loading} />)
+                : (<List seiyuuList={seiyuuList} loading={loading} />)
             }
 
             {goToTop && (
