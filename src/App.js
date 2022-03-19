@@ -86,11 +86,9 @@ function App() {
                 setSearch={setSearch}
             />
 
-            {loading && <Loading/>}
-
-            {seiyuuList.length == 0
-                ? <Blank />
-                : (<List seiyuuList={seiyuuList} loading={loading} />)
+            {loading 
+                ? <Loading />
+                : (seiyuuList.length === 0 ? <Blank /> : <List seiyuuList={seiyuuList} />)
             }
 
             {goToTop && (
