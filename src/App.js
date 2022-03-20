@@ -75,7 +75,7 @@ function App() {
 
     useEffect(() => {
 
-    },[])
+    }, [])
 
     return (
         <div className="App">
@@ -86,7 +86,7 @@ function App() {
                 setSearch={setSearch}
             />
 
-            {loading 
+            {loading
                 ? <Loading />
                 : (seiyuuList.length === 0 ? <Blank /> : <List seiyuuList={seiyuuList} />)
             }
