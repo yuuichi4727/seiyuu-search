@@ -51,7 +51,6 @@ function App() {
             const temp = await fetch(`https://api.jikan.moe/v4/people?q=${query}`)
             const list = await temp.json()
 
-            
             setSeiyuuList(list.data)
             setLoading(false)
         } catch (e) {
@@ -75,9 +74,6 @@ function App() {
 
     }, [])
 
-    useEffect(() => {
-
-    }, [])
 
     return (
         <div className="App">
