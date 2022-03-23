@@ -49,11 +49,13 @@ function App() {
     const fetchSeiyuu = async (query) => {
         try {
             const temp = await fetch(`https://api.jikan.moe/v4/people?q=${query}`)
-                .then(res => res.json());
-            setSeiyuuList(temp.data)
+            const list = await temp.json()
+
+            
+            setSeiyuuList(list.data)
             setLoading(false)
         } catch (e) {
-            console.log('error')
+            console.log('error', e)
         }
     }
 
